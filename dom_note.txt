@@ -1,0 +1,39 @@
+DOM Basics 
+
+What is the DOM?
+The Document Object Model (DOM) is a programming interface provided by web browsers. When a web page loads, the browser creates a DOM of the page, which is an object-oriented representation of the web page.
+Crucially: The DOM is not JavaScript, and it is not HTML.
+·	HTML is the static text file written by the developer.
+·	The DOM is a live tree-like data structure created by the browser in computer memory based on that HTML.
+·	JavaScript is the programming language used to access, modify, update, or delete elements inside that DOM tree.
+Selecting Elements
+Before JavaScript can modify any part of a web page, it must "find" or "select" the target element. The browser provides built-in methods on the global document object to make this easy.
+
+Common Selection Methods:
+1.	document.querySelector("selector")
+o	Returns the first element that matches a CSS selector (e.g., ID #id, class .class, or tag name p).
+o	Example: const mainHeading = document.querySelector("#title");
+2.	document.querySelectorAll("selector")
+o	Returns all matching elements as a static NodeList (similar to an array).
+o	Example: const allParagraphs = document.querySelectorAll("p");
+
+Handling User Interactions (Events)
+Web pages are static until the user interacts with them (clicking buttons, typing in fields, moving the mouse). The DOM listens for these occurrences using Event Listeners.
+
+
+const button = document.querySelector("#addBtn");
+const list = document.querySelector("#todoList");
+ 
+button.addEventListener("click", () => {
+  const item = document.createElement("li");
+  item.textContent = "New task";
+  list.appendChild(item);
+});
+
+·	document.querySelector("#addBtn"): Searches the HTML document for an element with the ID addBtn (e.g., <button id="addBtn">Add</button>) and stores a reference to it in a constant.
+·	document.querySelector("#todoList"): Finds the parent container element (usually a <ul> or <ol> tag) where items will be inserted.
+·	button.addEventListener("click", () => { ... }): Attaches an event listener to the button. It tells the browser: "Wait for the user to click this button, then execute the arrow function."
+·	document.createElement("li"): Dynamically creates a brand new HTML element (<li>) entirely in memory. It doesn't appear on the page yet.
+·	item.textContent = "New task";: Sets the inner text content of the newly created list item to "New task".
+·	list.appendChild(item);: Inserts the newly created <li> element as a child inside the #todoList container, instantly rendering it on the web page.
+
