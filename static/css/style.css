@@ -5,6 +5,11 @@
     --card-bg: #ffffff;
     --border: #e5e7eb;
 }
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,7 +62,7 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    padding: 30px;
+    padding: 60px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
 

@@ -6,7 +6,7 @@ const feedbackMsg = document.querySelector("#feedbackMsg");
 const productName = document.querySelector("#productName");
 
 let cartCount = 0;
-let selectedSize = "S"; // Default selected size
+let selectedSize = "M"; // Default selected size
 
 // 2. Handle Size Selection using event listeners & class toggling
 sizeButtons.forEach(button => {
